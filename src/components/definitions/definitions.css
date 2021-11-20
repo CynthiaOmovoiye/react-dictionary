@@ -1,0 +1,110 @@
+.meanings{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 55vh;
+    border: 10px solid rgb(105,105,105);
+    border-radius: 10px;
+    padding: 20px 10px;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    height: 12px;
+    width: 2px;
+    background: #393E46;
+}
+.meanings::-webkit-scrollbar {
+    display: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FFD369;
+    -webkit-border-radius: 1ex;
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+}
+
+::-webkit-scrollbar-corner {
+    background: #000;
+}
+
+.subTitle{
+    font-size: 3vw;
+    font-family: 'Montserrat', sans-serif;
+}
+.meaning{
+    overflow-y: auto;
+    height: 200px;
+    
+    /* background-color: rgba(0, 0, 0, 0.75);
+    color: white; */
+}
+.padded{
+    padding: 0 10px;
+}
+.top{
+    margin-bottom: 5px;
+}
+.mean{
+    background-color: #EEEEEE;
+    color: black;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+}
+.wordText{
+    font-weight: bolder;
+    color: #222831;
+    font-size: 28px;
+    text-transform: uppercase;
+}
+.defn:first-letter {
+    text-transform: uppercase;
+}
+sup{
+    color:rgba(99, 99, 99, 0.7);
+    margin-left: 3px;
+}
+.example, .synonym, .antonym{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.subText{
+    border-bottom: 2px solid #FFD369;
+    margin-right: 5px;
+    font-weight: 700;
+}
+.phonetics{
+    display: flex;
+     align-items: center
+}
+
+.partofspeech{
+    font-style: italic;
+    font-size: 24px;
+    color: #FFD369;
+    font-weight: 400;
+}
+.definitions{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding:10px;
+    margin-bottom: 15px;
+
+}
+@media(max-width: 900px){
+.meanings{
+    height: 60vh;
+    overflow-x: hidden;
+}
+.phonetics{
+    flex-direction: column;
+    align-items: flex-start;
+}
+.phonetics audio{
+    width: 100%;
+    margin-top: 8px;
+}
+.wordText{
+    margin-bottom: 0;
+}
+}
