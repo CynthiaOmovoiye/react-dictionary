@@ -15,7 +15,7 @@ const header = ({word, setWord}) => {
       });
     return (
         <div className="header">
-            <span className="title">Word <span style={{color: "#FFD369"}}>Hunt</span></span>
+            <span className="title">Word <span style={{color: "#FFD369"}}>Find</span></span>
             <div className="input">
                 <ThemeProvider theme={darkTheme}>
                 <TextField fullWidth size= "normal"  className="search" label="Enter word" variant="standard" value={word} onChange={(e)=>{
