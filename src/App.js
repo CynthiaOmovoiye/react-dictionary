@@ -32,7 +32,7 @@ function App() {
     <div className="App" style={{height: '100vh', backgroundColor: "#222831", color:"white" }}>
       <Container maxWidth="md" style={{display: "flex", height:"100vh", flexDirection: "column"}}>
       <Header word={word} setWord={setWord}/>
-      {meanings.length && word ? (<Definitions meanings = {meanings} word={word}/>)
+      {meanings.length && word ? (<Definitions meanings = {meanings} word={word} setWord={setWord}/>)
       :!meanings.length && word ? (
         <span className ="subTitle">No definitions available</span>
       )

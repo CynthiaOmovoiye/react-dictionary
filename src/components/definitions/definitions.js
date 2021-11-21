@@ -1,7 +1,10 @@
-import React from 'react';
-import './definitions.css'
+import { Button } from '@mui/material';
 
-const definitions = ({word, meanings}) => {
+import './definitions.css';
+import React, { useRef } from 'react';
+import Audio from '../audio/audio'
+
+const definitions = ({word, meanings, setWord}) => {
     return (
         <div className="meanings">
          {meanings.map((mean,index)=>(
@@ -11,10 +14,8 @@ const definitions = ({word, meanings}) => {
                    <div className="phonetics" style={{}}>
 
                    {mean.phonetic ? <span style={{marginRight: "5px"}}>{`${'/'}${mean.phonetic} ${'/'}`}</span>: "" }
-                   {mean.phonetics[0].audio && <audio controls id="beep" >
-                        <source src={mean.phonetics[0].audio} type="audio/mp3" />
-                        Your browser does not support the audio tag.
-                    </audio>}
+                   {mean.phonetics[0].audio && (<Audio source = {mean.phonetics[0].audio}/>
+                    )}
                    </div>
                   
                    <p>{mean.origin}</p>
@@ -42,7 +43,15 @@ const definitions = ({word, meanings}) => {
                                        <div className = "synonym">
                                            <p className="subText">Synonyms:</p>
                                            {definition.synonyms.map((synonym)=>(
-                                       <span>{`${synonym},`}</span>))}
+                                               <Button 
+                                               value = {synonym}
+                                               style={{borderRadius:"10px", margin: "2px"}}
+                                                onClick={(e) => {
+                                                setWord(e.target.value)
+                                              }} variant="outlined">
+                                                  {synonym}
+                                                  </Button>
+                                               ))}
                                        </div>
                                        
                                        
@@ -51,7 +60,14 @@ const definitions = ({word, meanings}) => {
                                        <div className = "antonym">
                                            <p className="subText">Antonyms:</p>
                                            {definition.antonyms.map((antonym)=>(
-                                       <span>{`${antonym}, `}</span>))}
+                                       <Button 
+                                       value = {antonym}
+                                       style={{borderRadius:"10px", margin: "2px"}}
+                                        onClick={(e) => {
+                                        setWord(e.target.value)
+                                      }} variant="outlined">
+                                          {antonym}
+                                          </Button>))}
                                        </div>
                                        
                                        
