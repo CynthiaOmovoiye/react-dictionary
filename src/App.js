@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 
 import { Container } from '@mui/material';
 import axios from 'axios';
@@ -19,12 +20,10 @@ function App() {
     }
     catch(error){
       setMeanings([])
-      console.log(error)
 
     }
 
   }
-  console.log(meanings, word)
   useEffect(()=>{
     dictionaryFunction()
   }, [word])
