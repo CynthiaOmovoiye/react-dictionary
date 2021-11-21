@@ -1,7 +1,7 @@
 import { Button } from '@mui/material';
 
 import './definitions.css';
-import React, { useRef } from 'react';
+import React from 'react';
 import Audio from '../audio/audio'
 
 const definitions = ({word, meanings, setWord}) => {

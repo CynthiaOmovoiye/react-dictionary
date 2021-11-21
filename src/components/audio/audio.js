@@ -8,12 +8,8 @@ const Audio = (source) => {
     Your browser does not support the audio tag.
 </audio>
 if(audioRef.current){
-    // audioRef.current.pause();
     audioRef.current.load();
-    // audioRef.current.play();
 }
-        // audio.load();
-        // audio.play(); 
     return (
        audio
         
