@@ -14,7 +14,7 @@ const definitions = ({word, meanings, setWord}) => {
                    <div className="phonetics" style={{}}>
 
                    {mean.phonetic ? <span style={{marginRight: "5px"}}>{`${'/'}${mean.phonetic} ${'/'}`}</span>: "" }
-                   {mean.phonetics[0].audio && (<Audio source = {mean.phonetics[0].audio}/>
+                   {mean.phonetics[0]?.audio && (<Audio source = {mean.phonetics[0].audio}/>
                     )}
                    </div>
                   
