@@ -9,7 +9,9 @@ const definitions = ({word, meanings}) => {
                    <div className="padded top">
                    <p className="wordText">{mean.word}<sup>{index+1}</sup></p>
                    <div className="phonetics" style={{}}>
-                   <span style={{marginRight: "5px"}}>{`${'/'}${mean.phonetic} ${'/'}`}</span>{mean.phonetics.length>0 && <audio controls id="beep" >
+
+                   {mean.phonetic ? <span style={{marginRight: "5px"}}>{`${'/'}${mean.phonetic} ${'/'}`}</span>: "" }
+                   {mean.phonetics[0].audio && <audio controls id="beep" >
                         <source src={mean.phonetics[0].audio} type="audio/mp3" />
                         Your browser does not support the audio tag.
                     </audio>}
